@@ -1,12 +1,11 @@
 package com.fw.utils;
 
 import com.fw.constants.Constants;
+import com.fw.enums.ConfigProperties;
+
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Properties;
+import java.util.*;
 
 public final class PropertyFileReader {
 
@@ -37,18 +36,19 @@ public final class PropertyFileReader {
     /* Read values from config properties file
        @param: Key
     * */
-    public static String getValue(String key) {
-        if (Objects.isNull(key) || Objects.isNull(configMap.get(key))) {
+    public static String getValue(ConfigProperties key) {
+        if (Objects.isNull(key) || Objects.isNull(configMap.get(key.name().toLowerCase()))) {
             try {
                 throw new Exception("Key or Value is Null, please check!!");
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
 
         else
-            return configMap.get(key);
+            return configMap.get(key.name().toLowerCase());
 
     }
 
