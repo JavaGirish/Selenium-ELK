@@ -16,7 +16,11 @@ public final class Constants {
     public static final String CONFIG_PATH= RESOURCES_PATH + "com.fw.config/config.properties";
 
     private static final String EXCEL_PATH = RESOURCES_PATH + "testData/DataSheet.xlsx";
+    private static final String BLANK_EMAIL_MSG= "Please enter your email";
 
+    private static final String INVALID_LOGIN_MSG= "Login was unsuccessful. Please correct the errors and try again.";
+
+    private static final String RUN_SHEET = "RunManager";
 
 
     public static int getExplicitWait() {
@@ -33,6 +37,18 @@ public final class Constants {
 
     public static int getImplicitWait() {
         return IMPLICIT_WAIT;
+    }
+
+    public static String getRunSheet() {
+        return RUN_SHEET;
+    }
+
+    public static String getBlankEmailMsg() {
+        return BLANK_EMAIL_MSG;
+    }
+
+    public static String getInvalidLoginMsg() {
+        return INVALID_LOGIN_MSG;
     }
 
 

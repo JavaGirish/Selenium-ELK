@@ -9,16 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtils {
 
-    private WaitUtils() {}
+    private WaitUtils() {
+    }
 
-    public static void waitForElement(WaitStrategy wait, By locator)
-    {
-        if(wait == WaitStrategy.CLICKABLE){
+    public static void waitForElement(WaitStrategy wait, By locator) {
+        if (wait == WaitStrategy.CLICKABLE) {
             new WebDriverWait(DriverManager.getDriver(), Constants.getExplicitWait())
                     .until(ExpectedConditions.elementToBeClickable(locator));
-        }
-
-        else if(wait  == WaitStrategy.PRESENCE){
+        } else if (wait == WaitStrategy.PRESENCE) {
             new WebDriverWait(DriverManager.getDriver(), Constants.getExplicitWait())
                     .until(ExpectedConditions.presenceOfElementLocated(locator));
         }

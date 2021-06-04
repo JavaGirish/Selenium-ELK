@@ -10,6 +10,9 @@ public class LoginPage extends BasePage {
     private By txtPassword = By.id("Password");
     private By btnLogin = By.xpath("//button[text()='Log in']");
 
+    private By msgEmailError = By.id("Email-error");
+    private By msgLoginUnsuccessful = By.xpath("//div[contains(@class,'summary-errors')]");
+
     public void enterEmail(String email) {
         sendKeys(txtEmail, email);
         ExtentLogger.pass("Entered user email: " +email);
@@ -23,6 +26,14 @@ public class LoginPage extends BasePage {
     public void clickLogin() {
         click(btnLogin);
         ExtentLogger.pass("Clicked on login button");
+    }
+
+    public String getInvalidLoginMessage() {
+        return getText(msgLoginUnsuccessful);
+    }
+
+    public String getBlankEmailValidationMessage() {
+        return getText(msgEmailError);
     }
 
 

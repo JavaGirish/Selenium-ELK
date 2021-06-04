@@ -4,6 +4,9 @@ public enum ConfigProperties {
 
     URL,
     EMAIL,
-    PASSWORD
+    PASSWORD,
+    INVALIDPASSWORD,
+    RETRYFAILEDTESTS,
+    BROWSER
 
 }

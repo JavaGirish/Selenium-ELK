@@ -1,1 +1,7 @@
 target
+.classpath
+.project
+SeleniumFW.iml
+index.html
+.idea
+.settings

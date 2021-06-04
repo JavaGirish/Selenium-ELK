@@ -24,6 +24,12 @@ public class BasePage {
     }
 
 
+    protected String getText(By locator){
+        WaitUtils.waitForElement(WaitStrategy.PRESENCE, locator);
+        return DriverManager.getDriver().findElement(locator).getText();
+    }
+
+
 
 
 }

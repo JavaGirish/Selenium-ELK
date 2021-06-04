@@ -9,24 +9,23 @@ import java.util.*;
 
 public final class PropertyFileReader {
 
-    private PropertyFileReader() { }
+    private PropertyFileReader() {
+    }
 
     private static Properties properties = new Properties();
-    private static Map<String,String> configMap = new HashMap<>();
+    private static Map<String, String> configMap = new HashMap<>();
 
     /* Static block to read values from config file and add it in hashmap
-    */
+     */
     static {
         try (FileInputStream fis = new FileInputStream(Constants.CONFIG_PATH)) {
             properties.load(fis);
 
-            for(Object key : properties.keySet()){
-                configMap.put(String.valueOf(key) , properties.getProperty((String) key).trim());
+            for (Object key : properties.keySet()) {
+                configMap.put(String.valueOf(key), properties.getProperty((String) key).trim());
             }
 
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -40,14 +39,11 @@ public final class PropertyFileReader {
         if (Objects.isNull(key) || Objects.isNull(configMap.get(key.name().toLowerCase()))) {
             try {
                 throw new Exception("Key or Value is Null, please check!!");
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
-        }
-
-        else
+        } else
             return configMap.get(key.name().toLowerCase());
 
     }
