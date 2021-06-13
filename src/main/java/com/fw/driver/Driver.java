@@ -48,10 +48,13 @@ public final class Driver {
 				}
 
 				else {
+					WebDriverManager.chromedriver().setup();
 					DriverManager.setDriver(new ChromeDriver());
 				}
 
-			} else if (browser.equalsIgnoreCase(Browsers.FIREFOX.name())) {
+			} 
+			
+			else if (browser.equalsIgnoreCase(Browsers.FIREFOX.name())) {
 
 				if (PropertyFileReader.getValue(ConfigProperties.RUNONGRID).equalsIgnoreCase("Yes")) {
 					DesiredCapabilities cap = new DesiredCapabilities();
@@ -69,6 +72,7 @@ public final class Driver {
 				}
 
 				else {
+					WebDriverManager.firefoxdriver().setup();
 					DriverManager.setDriver(new FirefoxDriver());
 				}
 

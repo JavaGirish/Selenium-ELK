@@ -3,13 +3,11 @@ package com.fw.tests;
 import java.util.Map;
 
 import org.assertj.core.api.Assertions;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.fw.base.TestBase;
 import com.fw.constants.Constants;
 import com.fw.driver.DriverManager;
-import com.fw.listeners.TestListener;
 import com.fw.pages.LoginPage;
 
 

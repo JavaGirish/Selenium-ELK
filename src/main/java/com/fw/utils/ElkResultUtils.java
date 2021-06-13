@@ -23,7 +23,7 @@ public class ElkResultUtils {
 
 		given().contentType(ContentType.JSON)
 		.body(resultsMap)
-		.when().post("")
+		.when().post("http://00.0.000.000:9200/suite/result")
 		.then().statusCode(HttpStatus.SC_CREATED);
 
 	}
