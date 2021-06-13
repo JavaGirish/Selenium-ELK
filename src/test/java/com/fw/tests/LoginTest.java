@@ -1,21 +1,19 @@
 package com.fw.tests;
 
-import com.fw.base.TestBase;
-import com.fw.constants.Constants;
-import com.fw.driver.DriverManager;
-import com.fw.enums.ConfigProperties;
-import com.fw.listeners.TestListener;
-import com.fw.pages.LoginPage;
-import com.fw.utils.DataUtils;
-import com.fw.utils.PropertyFileReader;
+import java.util.Map;
+
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Map;
+import com.fw.base.TestBase;
+import com.fw.constants.Constants;
+import com.fw.driver.DriverManager;
+import com.fw.listeners.TestListener;
+import com.fw.pages.LoginPage;
 
-@Listeners(TestListener.class)
-public class LoginTest extends TestBase {
+
+public final class LoginTest extends TestBase {
 
     @Test
     public void loginTestUsingValidData(Map<String,String> data) {
@@ -47,6 +45,8 @@ public class LoginTest extends TestBase {
         lp.clickLogin();
         Assertions.assertThat(lp.getInvalidLoginMessage())
                 .contains(Constants.getInvalidLoginMsg());
+        
+     
 
     }
 

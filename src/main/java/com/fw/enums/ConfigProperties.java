@@ -7,6 +7,8 @@ public enum ConfigProperties {
     PASSWORD,
     INVALIDPASSWORD,
     RETRYFAILEDTESTS,
+    RUNONGRID,
+    GRIDURL,
     BROWSER
 
 }

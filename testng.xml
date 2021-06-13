@@ -10,7 +10,7 @@
 
     <test thread-count="1" name="Test" parallel="methods">
         <classes>
-            <class name="com.fw.tests.LoginTest"/>
+            <class name="com.fw.tests.LoginTest"/> 
 
         </classes>
 

@@ -24,6 +24,7 @@ public class TestListener implements ITestListener, ISuiteListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentLogger.pass(result.getMethod().getMethodName() + " has passed");
+        
     }
 
     @Override
